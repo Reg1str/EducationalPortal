@@ -1,0 +1,10 @@
+﻿.selected-item {
+    background-color: lightgreen;
+}
+
+.description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}

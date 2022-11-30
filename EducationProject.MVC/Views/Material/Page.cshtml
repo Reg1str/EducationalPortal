@@ -1,0 +1,60 @@
+﻿@model EducationPortal.Application.Services.DTO.MaterialPageDTO
+
+<link href="/css/Course/page.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Options -->
+        <div class="col-2">
+            <div class="card text-center" style="margin-top: 1em;">
+                Options
+            </div>
+            <div class="card text-center" style="margin-top: 1em;">
+                <a class="btn btn-success text-white" asp-controller="Material" asp-action="Create">Create Material</a>
+            </div>
+        </div>
+        <!-- /Options -->
+        <!-- Skills -->
+        <div class="col-8 ml-2">
+            @foreach (var materialDto in Model.materialInfoDTOs)
+            {
+                <a asp-controller="Material" asp-action="MaterialInfo" asp-route-materialId="@materialDto.Id" class="card course-card d-block">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="d-block course-picture rounded-circle m-2">
+                        </div>
+                        <div class="col-8 container justify-content-center align-items-center m-auto">
+                            <div class="text-center align-self-center">
+                                <h3 class="d-block">@materialDto.Title</h3>
+                                <p class="d-block">@materialDto.Description</p>
+                            </div>
+                            @if (ViewData["courseId"] != null)
+                            {
+                                <form method="post" asp-controller="Course" asp-action="AddMaterial"
+                                      asp-route-courseId="@ViewData["courseId"]" asp-route-materialId="@materialDto.Id">
+                                    <button type="submit" class="btn btn-primary m-2">Add</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </a>
+            }
+            <!-- /Skills -->
+            <div class="d-flex justify-content-center mt-3">
+                <ul class="pagination">
+                    @if (Model != null)
+                    {
+                        @if (Model.PageNumber > 1)
+                        {
+                            <li class="page-item"><a class="page-link" asp-controller="Material" asp-action="Page" asp-route-pageNumber="@(Model.PageNumber - 1)">Previous</a></li>
+                        }
+                        <li class="page-item"><a class="page-link" asp-controller="Material" asp-action="Page" asp-route-pageNumber="@(Model.PageNumber)">@(Model.PageNumber)</a></li>
+                        @if (Model.PageNumber < Model.LastPageNumber)
+                        {
+                            <li class="page-item"><a class="page-link" asp-controller="Material" asp-action="Page" asp-route-pageNumber="@(Model.PageNumber + 1)">Next</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>

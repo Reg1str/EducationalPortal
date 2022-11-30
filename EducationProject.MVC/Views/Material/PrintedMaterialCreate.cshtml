@@ -1,0 +1,19 @@
+﻿<form method="post" asp-controller="Material" asp-action="CreatePrintedMaterial" class="mt-5 text-center justify-content-center">
+    <div class="form-group m-1">
+        <label class="d-block">Title</label>
+        <input type="text" name="Title" required />
+    </div>
+    <div class="form-group m-1">
+        <label class="d-block">Description</label>
+        <textarea name="Description" rows="3" required></textarea>
+    </div>
+    <div class="form-group m-1">
+        <label class="d-block">PagesCount</label>
+        <input type="number" name="PagesCount" required>
+    </div>
+    <div class="form-group m-1">
+        <label class="d-block">AuthorName</label>
+        <input type="text" name="AuthorName" required />
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+</form>

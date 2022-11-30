@@ -1,0 +1,29 @@
+﻿<div class="container justify-content-center mt-5">
+    <div class="row">
+        <div class="col">&nbsp;</div>
+        <div class="col text-center">
+            <h2>Create Material</h2>
+            <div class="btn-group">
+                <a asp-controller="Material" asp-action="Create" asp-route-materialType="Video" class="btn btn-success m-1">Video</a>
+                <a asp-controller="Material" asp-action="Create" asp-route-materialType="PrintedMaterial" class="btn btn-success m-1">PrintedMaterial</a>
+                <a asp-controller="Material" asp-action="Create" asp-route-materialType="Article" class="btn btn-success m-1">Article</a>
+            </div>
+            @if (ViewData["materialType"] != null)
+            {
+                switch (ViewData["materialType"])
+                {
+                    case "Article":
+                        <partial name="ArticleCreate" />
+                        break;
+                    case "PrintedMaterial":
+                        <partial name="PrintedMaterialCreate" />
+                        break;
+                    case "Video":
+                        <partial name="VideoCreate" />
+                        break;
+                }
+            }
+        </div>
+        <div class="col">&nbsp;</div>
+    </div>
+</div>

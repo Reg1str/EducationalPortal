@@ -1,0 +1,689 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationProject.MVC\\EducationProject.MVC.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Application.Services\\EducationPortal.Application.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Application.Services\\EducationPortal.Application.Services.csproj",
+        "projectName": "EducationPortal.Application.Services",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Application.Services\\EducationPortal.Application.Services.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Application.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj",
+        "projectName": "EducationPortal.Domain.Core",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj",
+        "projectName": "EducationPortal.Domain.Services",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.EntityFramework\\EducationPortal.EntityFramework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.EntityFramework\\EducationPortal.EntityFramework.csproj",
+        "projectName": "EducationPortal.EntityFramework",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.EntityFramework\\EducationPortal.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.EntityFramework\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationProject.MVC\\EducationProject.MVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationProject.MVC\\EducationProject.MVC.csproj",
+        "projectName": "EducationProject.MVC",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationProject.MVC\\EducationProject.MVC.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationProject.MVC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Instrastructure.BLL\\Instrastructure.BLL.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Instrastructure.BLL\\Instrastructure.BLL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[9.5.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Infrastructure.DAL\\Infrastructure.JsonDAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Infrastructure.DAL\\Infrastructure.JsonDAL.csproj",
+        "projectName": "Infrastructure.JsonDAL",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Infrastructure.DAL\\Infrastructure.JsonDAL.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Infrastructure.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Instrastructure.BLL\\Instrastructure.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Instrastructure.BLL\\Instrastructure.BLL.csproj",
+        "projectName": "Instrastructure.BLL",
+        "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Instrastructure.BLL\\Instrastructure.BLL.csproj",
+        "packagesPath": "C:\\Users\\Леночка\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Instrastructure.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Леночка\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Application.Services\\EducationPortal.Application.Services.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Application.Services\\EducationPortal.Application.Services.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Core\\EducationPortal.Domain.Core.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.Domain.Services\\EducationPortal.Domain.Services.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.EntityFramework\\EducationPortal.EntityFramework.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\EducationPortal.EntityFramework\\EducationPortal.EntityFramework.csproj"
+              },
+              "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Infrastructure.DAL\\Infrastructure.JsonDAL.csproj": {
+                "projectPath": "C:\\Users\\Леночка\\RiderProjects\\EducationalPortal\\EducationPortal\\Infrastructure.DAL\\Infrastructure.JsonDAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

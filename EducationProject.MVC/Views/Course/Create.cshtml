@@ -1,0 +1,342 @@
+﻿<link href="/css/Course/courseCreate.css" rel="stylesheet" />
+
+<div class="container justify-content-center align-items-center w-25" style="margin: 0 auto;">
+    <progress id="creation-progress" class="progress-bar-animated mt-5" value="0" max="60" style="width: 100%">
+    </progress>
+    <div id="first_step" class="text-center">
+        <h2>Create course</h2>
+        <div class="form-group">
+            <input id="course_title" type="text" class="form-control" name="title" placeholder="Title" required="required">
+        </div>
+        <div class="form-group">
+            <textarea id="course_description" type="text" class="form-control" name="description" placeholder="Description" required="required"></textarea>
+        </div>
+        <div class="form-group">
+            <button id="first_step_next" class="btn btn-primary btn-lg btn-block">Next</button>
+        </div>
+    </div>
+
+    <div id="second_step" class="text-center container justify-content-center" style="visibility: hidden;">
+        <h2>Add materials</h2>
+        <div id="material_page" class="form-group">
+
+        </div>
+        <div id="material_pagination_div" class="d-flex justify-content-center mt-3">
+            <ul id="material_pagination_ul" class="pagination">
+                <li id="material-pagination-current" class="page-item btn btn-primary">1</li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <button id="second_step_prev" class="btn btn-primary btn-lg btn-block">Previous</button>
+            <button id="second_step_next" class="btn btn-primary btn-lg btn-block">Next</button>
+        </div>
+    </div>
+
+    <div id="third_step" class="text-center container justify-content-center" style="visibility: hidden;">
+        <h2>Add skills</h2>
+        <div id="skill_page" class="form-group">
+            <div></div>
+        </div>
+        <div id="skill_pagination_div" class="d-flex justify-content-center mt-3">
+            <ul id="skill_pagination_ul" class="pagination">
+                <li id="skill-pagination-current" class="page-item btn btn-primary">1</li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <button id="third_step_prev" class="btn btn-primary btn-lg btn-block">Previous</button>
+            <button id="third_step_create" class="btn btn-success btn-lg btn-block">Create</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    Array.prototype.remove = function () {
+        var what, a = arguments, L = a.length, ax;
+        while (L && this.length) {
+            what = a[--L];
+            while ((ax = this.indexOf(what)) !== -1) {
+                this.splice(ax, 1);
+            }
+        }
+        return this;
+    };
+
+    let courseDescription = "";
+    let courseTitle = "";
+    let skillIds = [];
+    let materialIds = [];
+
+    function clearPage(id) {
+        $(`#${id}`).empty();
+    }
+
+    function updateCurrentPage(id, value) {
+        $(`${id}-pagination-current`).text(value);
+    }
+
+    function addCurrentPage(id, number = 1) {
+        let current = document.createElement("li");
+        current.setAttribute("id", `${id}-pagination-current`);
+        current.setAttribute("class", "btn btn-primary m-1");
+        current.innerText = number;
+        $(`#${id}_pagination_ul`).append(current);
+    }
+
+    function addPrevPage(id) {
+        let prevPage = document.createElement("li");
+        prevPage.setAttribute("id", `${id}-pagination-prev`);
+        prevPage.setAttribute("class", "btn btn-primary m-1");
+        prevPage.innerText = "Previous";
+        $(`#${id}_pagination_ul`).append(prevPage);
+    }
+
+    function addNextPage(id) {
+        let nextPage = document.createElement("li");
+        nextPage.setAttribute("id", `${id}-pagination-next`);
+        nextPage.setAttribute("class", "btn btn-primary m-1");
+        nextPage.innerText = "Next";
+        $(`#${id}_pagination_ul`).append(nextPage);
+    }
+
+    function displayMaterialsPaged(number) {
+        $.ajax({
+            type: "GET",
+            url: "/Material/PageJson",
+            data: { pageNumber: number },
+            success: (json) => {
+                clearPage("material_page");
+                clearPage("material_pagination_ul");
+
+                var lastPageNumber = json.lastPageNumber;
+                var pageNumber = json.pageNumber;
+                var materialInfos = json.materialInfoDTOs;
+
+
+                for (let material = 0; material < materialInfos.length; material++) {
+                    let materialItem = document.createElement("div");
+                    let materialTitle = document.createElement("h4");
+                    let materialDescription = document.createElement("p");
+                    materialItem.setAttribute("class", "card mt-2 text-center material-item");
+                    materialItem.setAttribute("id", `material-${materialInfos[material].id}`);
+
+                    materialTitle.innerText = materialInfos[material].title;
+
+                    materialDescription.innerText = materialInfos[material].description;
+                    materialDescription.setAttribute("class", "description");
+
+                    materialItem.appendChild(materialTitle);
+                    materialItem.appendChild(materialDescription);
+
+                    if (materialIds.includes(materialInfos[material].id)) {
+                        materialItem.setAttribute("class", "selected-item");
+                        let removeButton = document.createElement("button");
+                        removeButton.innerText = "Remove";
+                        removeButton.setAttribute("class", "btn btn-danger remove-button");
+                        materialItem.appendChild(removeButton);
+                    }
+                    else {
+                        materialItem.setAttribute("class", "card mt-2 text-center material-item");
+                        let createButton = document.createElement("button");
+                        createButton.innerText = "Add";
+                        createButton.setAttribute("class", "btn btn-success create-button");
+                        materialItem.appendChild(createButton);
+                    }
+
+
+                    $("#material_page").append(materialItem);
+                }
+
+                if (pageNumber > 1) {
+                    addPrevPage("material");
+                }
+
+                addCurrentPage("material", pageNumber);
+
+                if (pageNumber < lastPageNumber) {
+                    addNextPage("material");
+                }
+
+                updateCurrentPage(pageNumber);
+            }
+        });
+    }
+
+    function makeSelected(id) {
+        let removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        removeButton.setAttribute("class", "btn btn-danger remove-button");
+        $(`#${id}`).addClass("selected-item");
+        $(`#${id}`).append(removeButton);
+        $(`#${id}`).find(".create-button").remove();
+    }
+
+    function removeSelected(id) {
+        let createButton = document.createElement("button");
+        createButton.innerText = "Add";
+        createButton.setAttribute("class", "btn btn-success create-button");
+        $(`#${id}`).removeClass("selected-item");
+        $(`#${id}`).append(createButton);
+        $(`#${id}`).find(".remove-button").remove();
+    }
+
+    function displaySkillsPaged(number) {
+        $.ajax({
+            type: "GET",
+            url: "/Skill/PageJson",
+            data: { pageNumber: number },
+            success: (json) => {
+                clearPage("skill_page");
+                clearPage("skill_pagination_ul");
+
+                var lastPageNumber = json.lastPageNumber;
+                var pageNumber = json.pageNumber;
+                var skillInfos = json.skillInfoDTOs;
+
+                console.log(json);
+
+                for (let skill = 0; skill < skillInfos.length; skill++) {
+                    let skillItem = document.createElement("div");
+                    let skillName = document.createElement("h4");
+
+                    skillItem.setAttribute("id", `skill-${skillInfos[skill].id}`);
+                    skillName.innerText = skillInfos[skill].name;
+
+                    skillItem.appendChild(skillName);
+
+                    if (skillIds.includes(skillInfos[skill].id)) {
+                        skillItem.setAttribute("class", "card mt-2 text-center skill-item selected-item");
+                        let removeButton = document.createElement("button");
+                        removeButton.innerText = "Remove";
+                        removeButton.setAttribute("class", "btn btn-danger remove-button");
+                        skillItem.appendChild(removeButton);
+                    }
+                    else {
+                        skillItem.setAttribute("class", "card mt-2 text-center skill-item");
+                        let createButton = document.createElement("button");
+                        createButton.innerText = "Add";
+                        createButton.setAttribute("class", "btn btn-success create-button");
+                        skillItem.appendChild(createButton);
+                    }
+
+
+                    $("#skill_page").append(skillItem);
+                }
+
+                if (pageNumber > 1) {
+                    addPrevPage("skill");
+                }
+
+                addCurrentPage("skill", pageNumber);
+
+                if (pageNumber < lastPageNumber) {
+                    addNextPage("skill");
+                }
+
+                updateCurrentPage(pageNumber);
+            }
+        });
+    }
+
+    $("#material_page").on("click", ".create-button", function (event) {
+        let materialId = parseInt(event.target.parentElement.id.split("-")[1]);
+        makeSelected(`material-${materialId}`);
+        materialIds.push(materialId);
+    })
+
+    $("#material_page").on("click", ".remove-button", function (event) {
+        let materialId = parseInt(event.target.parentElement.id.split("-")[1]);
+        removeSelected(`material-${materialId}`);
+        materialIds.remove(materialId);
+    })
+
+    $("#skill_page").on("click", ".create-button", function (event) {
+        let skillId = parseInt(event.target.parentElement.id.split("-")[1]);
+        makeSelected(`skill-${skillId}`);
+        skillIds.push(skillId);
+    })
+
+    $("#skill_page").on("click", ".remove-button", function (event) {
+        let skillId = parseInt(event.target.parentElement.id.split("-")[1]);
+        removeSelected(`skill-${skillId}`);
+        skillIds.remove(skillId);
+    })
+
+    $("#skill_pagination_ul").on("click", "#skill-pagination-next", function () {
+        displaySkillsPaged(parseInt($("#skill-pagination-current").text()) + 1);
+    })
+
+    $("#skill_pagination_ul").on("click", "#skill-pagination-prev", function () {
+        displaySkillsPaged(parseInt($("#skill-pagination-current").text()) - 1);
+    })
+
+    $("#material_pagination_ul").on("click", "#material-pagination-next", function () {
+        displayMaterialsPaged(parseInt($("#material-pagination-current").text()) + 1);
+    })
+
+    $("#material_pagination_ul").on("click", "#material-pagination-prev", function () {
+        displayMaterialsPaged(parseInt($("#material-pagination-current").text()) - 1);
+    })
+
+    $("#second_step_prev").click(function () {
+        $("#first_step").css("visibility", "visible")
+            .css("display", "block");
+        $("#second_step").css("visibility", "hidden")
+            .css("display", "none");
+
+        $("#creation-progress").animate({ "value": 0}, 800);
+    });
+
+    $("#third_step_prev").click(function () {
+        $("#second_step").css("visibility", "visible")
+            .css("display", "block");
+        $("#third_step").css("visibility", "hidden")
+            .css("display", "none");
+
+        clearPage("skill_page");
+        clearPage("skill_pagination_ul");
+        $("#creation-progress").animate({ "value": 20 }, 800);
+    });
+
+    $("#first_step_next").click(function () {
+        if ($("#course_title").val() && $("#course_title").val()) {
+            $("#first_step").css("visibility", "hidden")
+                .css("display", "none");
+            $("#second_step").css("visibility", "visible")
+                .css("display", "block");
+
+            courseTitle = $("#course_title").val();
+            courseDescription = $("#course_title").val();
+            displayMaterialsPaged();
+            $("#creation-progress").animate({ "value": 20 }, 800);
+        }
+    });
+
+    $("#second_step_next").click(function () {
+        $("#second_step").css("visibility", "hidden")
+            .css("display", "none");
+        $("#third_step").css("visibility", "visible")
+            .css("display", "block");
+
+        displaySkillsPaged();
+        $("#creation-progress").animate({ "value": 40 }, 800);
+    });
+
+    $("#third_step_create").click(function () {
+        $("#creation-progress").animate({ "value": 60 }, 800);
+        setTimeout(() => {
+            $.ajax({
+                type: "POST",
+                url: "/Course/Create",
+                data: {
+                    'Title': courseTitle,
+                    'Description': courseDescription,
+                    'MaterialIds': materialIds,
+                    'SkillIds': skillIds
+                },
+                success: () => {
+                    window.location.href = "/Course/Page";
+                },
+            });
+        }, 850);
+    });
+</script>

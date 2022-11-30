@@ -1,0 +1,55 @@
+﻿@using EducationPortal.Application.Services.DTO
+@inject EducationProject.MVC.Managers.SignInManager SignInManager
+@model EducationPortal.Application.Services.DTO.MaterialInfoDTO
+
+<link href="~/css/Material/MaterialInfo.css" />
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card mt-5">
+        <div class="row">
+            <div class="col m-3">
+                <img width="250" height="250" src="https://www.sciencenewsforstudents.org/wp-content/uploads/2020/04/1030_LL_trees-1028x579.png" />
+            </div>
+            <div class="col m-3">
+                <div class="card-header">
+                    <h2>@Model.Title</h2>
+                </div>
+                <div class="card-body">
+                    <p>@Model.Description</p>
+                    @if (Model is VideoDTO video)
+                    {
+                        <h4>Quality : @video.Quality</h4>
+                        <h4>Length : @video.Length min.</h4>
+                    }
+                    @if (Model is ArticleDTO article)
+                    {
+                        <h4>Source URL : @article.SourceUrl</h4>
+                        <h4>Published Date : @article.PublishedDate</h4>
+                    }
+                    @if (Model is PrintedMaterialDTO printedMaterial)
+                    {
+                        <h4>Pages : @printedMaterial.PagesCount</h4>
+                        <h4>Authors: </h4>
+                        @foreach (var authorName in printedMaterial.AuthorNames)
+                        {
+                            <p>@authorName</p>
+                        }
+                    }
+                    @if (SignInManager.IsSignedIn() && Model.IsEnrolled)
+                    {
+                        if (Model.IsFinished)
+                        {
+                            <button type="submit" class="btn btn-outline-secondary" disabled>Finished</button>
+                        }
+                        else
+                        {
+                            <form asp-controller="Material" asp-action="Finish" asp-route-materialId="@Model.Id" method="post">
+                                <button type="submit" class="btn btn-primary">Finish</button>
+                            </form>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

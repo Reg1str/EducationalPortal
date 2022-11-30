@@ -1,0 +1,7 @@
+﻿body {
+    font-family: 'Space mono', monospace !important;
+}
+
+.nav-item.nav-link {
+    font-size: 1.2em;
+}

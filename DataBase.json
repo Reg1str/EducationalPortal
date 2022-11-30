@@ -1,0 +1,24 @@
+{
+    "Users": [{
+            "Firstname": "Said",
+            "Lastname": "Uncle",
+            "Email": null,
+            "Password": null,
+            "IsAdmin": false,
+            "Skills": null,
+            "Achievements": null,
+            "Courses": null,
+            "Id": 1
+        }, {
+            "Firstname": "2",
+            "Lastname": "2",
+            "Email": "2",
+            "Password": "2",
+            "IsAdmin": false,
+            "Skills": null,
+            "Achievements": null,
+            "Courses": null,
+            "Id": 0
+        }
+    ]
+}

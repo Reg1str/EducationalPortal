@@ -1,0 +1,16 @@
+﻿<form method="post" asp-controller="Skill" asp-action="Create" class="mt-5 text-center justify-content-center">
+    <h1>Create skill</h1>
+    <div class="form-group m-1">
+        <label class="d-block">Skill Name</label>
+        <input type="text" name="Name" required />
+    </div>
+    <div class="form-group m-1">
+        <label class="d-block">Progress Value</label>
+        <input type="number" name="Penalty" required>
+    </div>
+    <div class="form-group m-1">
+        <label class="d-block">Max Level</label>
+        <input type="number" name="MaxLevel" required />
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+</form>
